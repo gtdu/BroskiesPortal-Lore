@@ -16,7 +16,7 @@ if ($_SESSION['level'] > 1) {
         $handle->execute();
         header("Location: ?");
         die();
-    } else if ($_POST['action'] == 'newLore') {
+    } elseif ($_POST['action'] == 'newLore') {
         $handle = $config['dbo']->prepare('INSERT INTO lore (title, pc, lore) VALUES (?, ?, ?)');
         $handle->bindValue(1, $_POST['title']);
         $handle->bindValue(2, $_POST['pc']);
@@ -71,7 +71,7 @@ if ($_SESSION['level'] > 1) {
             </form>
         </div>
         <?php
-    } else if ($_GET['action'] == 'deleteLore') {
+    } elseif ($_GET['action'] == 'deleteLore') {
         ?>
         <div class="pl-4 pr-4 mb-4">
             <form method="post">
@@ -81,8 +81,7 @@ if ($_SESSION['level'] > 1) {
                         <?php
                         foreach ($lore as $story) {
                             echo "<option value='" . $story['id'] . "'>" . $story['pc'] . ': ' . $story['title'] . "</option>";
-                        }
-                        ?>
+                        } ?>
                     </select>
                 </div>
                 <input type="hidden" name="action" value="deleteLore">
@@ -110,9 +109,9 @@ if (count($lore) == 0) {
     <?php
     foreach ($lore as $story) {
         echo "<tr>";
-            echo "<td>" . $story['pc'] . "</td>";
-            echo "<td>" . $story['title'] . "</td>";
-            echo "<td>" . nl2br($story['lore']) . "</td>";
+        echo "<td>" . $story['pc'] . "</td>";
+        echo "<td>" . $story['title'] . "</td>";
+        echo "<td>" . nl2br($story['lore']) . "</td>";
         echo "</tr>";
     }
     echo "</table>";
