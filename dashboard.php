@@ -56,11 +56,11 @@ if ($_SESSION['level'] > 1) {
             <form method="post">
                 <div class="form-group">
                     <label for="newLoreTitle">Title</label>
-                    <input name="title" type="text" class="form-control" id="newLoreName" aria-describedby="emailHelp" placeholder="Trip To The Zoo" required>
+                    <input name="title" type="text" class="form-control" id="newLoreName" aria-describedby="aria" placeholder="Trip To The Zoo" required>
                 </div>
                 <div class="form-group">
                     <label for="newLorePC">Pledge Class</label>
-                    <input name="pc" type="text" class="form-control" id="newResourcePC" aria-describedby="emailHelp" placeholder="Fall 2010" required>
+                    <input name="pc" type="text" class="form-control" id="newResourcePC" aria-describedby="aria" placeholder="Fall 2010" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Lore</label>
