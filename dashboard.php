@@ -76,7 +76,7 @@ if ($_SESSION['level'] > 1) {
         <div class="pl-4 pr-4 mb-4">
             <form method="post">
                 <div class="form-group">
-                    <label for="deleteLoreLore">Resource</label>
+                    <label for="deleteLoreLore">Lore</label>
                     <select name="resource_id" required id="deleteLoreLore">
                         <?php
                         foreach ($lore as $story) {
