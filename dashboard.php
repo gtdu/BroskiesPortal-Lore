@@ -7,7 +7,7 @@ if ($_SESSION['level'] == 0 || $_SESSION['level'] > 2) {
 }
 $handle = $config['dbo']->prepare('SELECT * FROM lore ORDER BY pc, title');
 $handle->execute();
-$lore = $handle->fetchAll(\PDO::FETCH_ASSOC);
+$lore = $handle->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SESSION['level'] > 1) {
     if ($_POST['action'] == 'deleteLore') {
@@ -29,11 +29,12 @@ if ($_SESSION['level'] > 1) {
 
 ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title></title>
 </head>
 
 <body>
@@ -55,11 +56,11 @@ if ($_SESSION['level'] > 1) {
         <div class="pl-4 pr-4 mb-4">
             <form method="post">
                 <div class="form-group">
-                    <label for="newLoreTitle">Title</label>
+                    <label for="newLoreName">Title</label>
                     <input name="title" type="text" class="form-control" id="newLoreName" aria-describedby="aria" placeholder="Trip To The Zoo" required>
                 </div>
                 <div class="form-group">
-                    <label for="newLorePC">Pledge Class</label>
+                    <label for="newResourcePC">Pledge Class</label>
                     <input name="pc" type="text" class="form-control" id="newResourcePC" aria-describedby="aria" placeholder="Fall 2010" required>
                 </div>
                 <div class="form-group">
