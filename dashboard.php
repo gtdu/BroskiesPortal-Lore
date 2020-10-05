@@ -5,7 +5,7 @@ include_once("init.php");
 if ($_SESSION['level'] == 0 || $_SESSION['level'] > 2) {
     die();
 }
-$handle = $config['dbo']->prepare('SELECT * FROM lore ORDER BY pc, title');
+$handle = $config['dbo']->prepare('SELECT * FROM lore ORDER BY pc DESC, title');
 $handle->execute();
 $lore = $handle->fetchAll(PDO::FETCH_ASSOC);
 
@@ -61,7 +61,7 @@ if ($_SESSION['level'] > 1) {
                 </div>
                 <div class="form-group">
                     <label for="newResourcePC">Pledge Class</label>
-                    <input name="pc" type="text" class="form-control" id="newResourcePC" aria-describedby="aria" placeholder="Fall 2010" required>
+                    <input name="pc" type="text" class="form-control" id="newResourcePC" aria-describedby="aria" placeholder="2020 Fall" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Lore</label>
